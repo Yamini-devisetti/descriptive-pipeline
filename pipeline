@@ -1,0 +1,29 @@
+pipeline{
+    tools{
+        maven 'mymaven-project'
+    }
+    agent any
+    stages{
+        stage('checkout code')
+        {
+            steps
+            {
+            git 'https://github.com/Yamini-devisetti/myjavaproject.git'
+            }
+        }
+        stage('compile code')
+        {
+            steps
+            {
+                sh 'mvn compile'
+            }
+        }
+        stage('review code')
+        {
+            steps
+            {
+                sh 'mvn pmd:pmd'
+            }
+        }
+    }
+}
