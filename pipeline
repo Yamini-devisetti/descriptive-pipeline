@@ -8,7 +8,7 @@ pipeline{
         {
             steps
             {
-            git 'https://github.com/Yamini-devisetti/myjavaproject.git'
+           git branch: 'main', url: 'https://github.com/Yamini-devisetti/myjavaproject.git'
             }
         }
         stage('compile code')
